@@ -18,6 +18,7 @@ public class RedisDaoTest extends BaseTest {
 
     @Autowired
     private RedisDao redisDao;
+
     @Test
     public void saveAndGet() throws Exception {
         String uuid = UUID.randomUUID().toString();

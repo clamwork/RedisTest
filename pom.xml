@@ -26,7 +26,7 @@
         <class.dir>${project.build.directory}/classes</class.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java-version>1.8</java-version>
-        <org.springframework-version>4.3.7.RELEASE</org.springframework-version>
+        <org.springframework-version>4.3.9.RELEASE</org.springframework-version>
         <org.aspectj-version>1.8.10</org.aspectj-version>
         <org.slf4j-version>1.7.24</org.slf4j-version>
         <mybatis-pagehelper.version>5.0.1</mybatis-pagehelper.version>
@@ -180,7 +180,7 @@
         <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-redis</artifactId>
-            <version>1.8.3.RELEASE</version>
+            <version>1.8.4.RELEASE</version>
         </dependency>
 
     </dependencies>
@@ -220,11 +220,14 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.5.v20170502</version>
                 <configuration>
-                    <stopPort>1000</stopPort>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <webApp>
-                        <contextPath>/test</contextPath>
+                        <contextPath>/</contextPath>
                     </webApp>
+                    <httpConnector>
+                        <port>8081</port>
+                    </httpConnector>
+                    <reload>automatic</reload>
                 </configuration>
             </plugin>
 

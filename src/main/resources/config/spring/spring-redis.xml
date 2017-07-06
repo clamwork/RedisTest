@@ -9,11 +9,7 @@
 	
 	<context:annotation-config />
 
-	<!-- 引入配置文件 -->
-	<bean id="propertyConfigurer"
-		  class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-		<property name="location" value="classpath:config/properties/redis.properties" />
-	</bean>
+	<context:property-placeholder location="classpath:config/properties/*.properties" />
 
 	<!-- jedis 配置-->
 	<bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig" >
@@ -59,11 +55,4 @@
 			<bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
 		</property>
 	</bean >
-
-	<bean id="redisHttpSessionConfiguration"
-		  class="org.springframework.session.data.redis.config.annotation.web.http.RedisHttpSessionConfiguration">
-		<!--超时时间,默认1800秒-->
-		<property name="maxInactiveIntervalInSeconds" value="1800" />
-	</bean>
-
 </beans>
